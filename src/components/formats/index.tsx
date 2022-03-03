@@ -30,7 +30,7 @@ const Formats : FC = () => {
               {checkboxState === 0 &&                 
               <div className="error-message-container bg-errorBgRed rounded-md h-14 col-start-1 col-end-4 xl:mr-5 lg:mr-7 md:mr-8 flex items-center justify-evenly">
                   <ErrorSvg className="text-errorIcon"/>
-                <p className="text-sm text-red-800">This is an error message that appears when there are 0 formats are selected</p>
+                <p className="text-sm text-red-800" data-testid="error-message">This is an error message that appears when there are 0 formats are selected</p>
                 </div>}
             </div>
         </div>
