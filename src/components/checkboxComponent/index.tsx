@@ -24,9 +24,9 @@ const CheckBoxComponent : FC<CheckBoxComponentProps> = ({
         <div className={`flex flex-col border rounded-lg ${activeState ? "border-activeBorder" : "border-inactiveBorder"} ${activeState ? "bg-activeBg" : "bg-white"} items-center justify-evenly w-44 h-36`}>
           <div className="checkbox-image-container">
             {type === 'Digital' ? 
-            <DigitalSvg className={`${activeState ? "text-activeIcon" : "text-inactiveIcon"}`}/> : type === "CD" ? 
-            <CdSvg className={`${activeState ? "text-activeIcon" : "text-inactiveIcon"}`}/> : 
-            <VinylSvg className={`${activeState ? "text-activeIcon" : "text-inactiveIcon"}`}/> }
+            <DigitalSvg data-testid="digital-svg" className={`${activeState ? "text-activeIcon" : "text-inactiveIcon"}`}/> : type === "CD" ? 
+            <CdSvg data-testid="cd-svg" className={`${activeState ? "text-activeIcon" : "text-inactiveIcon"}`}/> : 
+            <VinylSvg data-testid="vinyl-svg" className={`${activeState ? "text-activeIcon" : "text-inactiveIcon"}`}/> }
           </div>
           <div className="checkbox-label-container">
             <label className={`${activeState ? "text-activeColor" : "text-inactiveColor"}`}>
@@ -34,7 +34,7 @@ const CheckBoxComponent : FC<CheckBoxComponentProps> = ({
             </label>
           </div>
           <div className="checkbox-check-container flex justify-center">
-            <input className="rounded w-4 h-4" defaultChecked={defaultChecked} onChange={(e) => {
+            <input className="rounded w-4 h-4" data-testid="checkbox" defaultChecked={defaultChecked} onChange={(e) => {
               if(e.target.checked){
                 setCheckBoxState(1);
                 setActiveState(true);
